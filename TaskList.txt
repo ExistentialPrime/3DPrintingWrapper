@@ -2,16 +2,44 @@ Task List
 -----------------------------------
 The following is a list of files that need to be wrapped in managed code wrappers to allow consumption by C# / WPF
 
-Notes: How to handle 'External Dependencies' like Mesh.h and Material.h and BoundingBox.h and Geometry.h and SliceGeometry ??
-
 Class								Lines of Code		Status			Wrapped Class Name			Actor(s)	Dependencies	
 ------------------------------		--------------		-----------		-----------------------		---------	--------------------------------
 PrintPreview\ApplicationCore		1131				In Progress		TestWrapper					JC, PM		TextureManager, SceneContainer, SceneObject, Camera, Renderer, ScaleTool, RotateTool, Geometry, GeometryBuilder, SliceGeometry, BoundingBox, PrinterVolume, ObjParser, MaterialInfo, MeshRenderableShape
+PrintPreview\Renderer				168					Not Started		n/a							n/a			Camera, ShaderBinaries, VertexFormats, SceneObject, ColorPresets
+PrintPreview\ScaleTool				182					Not Started		n/a							n/a			SceneObject, SceneContainer, BoundingBox, PrinterVolume, Units
+PrintPreview\RotateTool				64					Not Started		n/a							n/a			SceneObject, SceneContainer, BoundingBox, PrinterVolume, RotationPoses
+PrintPreview\CameraTool				406					Not Started		n/a							n/a			CameraController, ControllerSpherical, PanController, ZoomController
+PrintPreview\CameraController		62					Not Started		n/a							n/a			Camera
+PrintPreview\ControllerSperical		58					Not Started		n/a							n/a			CameraController
+PrintPreview\PanController			49					Not Started		n/a							n/a			CameraController
+PrintPreview\ZoomController			44					Not Started		n/a							n/a			CameraController
+PrintPreview\PrinterVolume			46					Not Started		n/a							n/a			BoundingBox
+
 RenderTools\SceneContainer			402					In Progress		WrappedSceneContainer		PM			SceneObject, Mesh, MeshRenderableShape, SliceRenderableShape, Geometry, Camera, SelectionContainer
 RenderTools\SceneObject				356					Not Started		n/a							n/a			Geometry, BoundingBox
 RenderTools\SliceRenderableShape	238					Not Started		n/a							n/a			SliceGeometry, Mesh, SceneObject, BoundingBox, VertexFormats, SliceConverter
 RenderTools\MeshRenderableShape		471					Not Started		n/a							n/a			SceneObject, Texture, TextureManager, VertexFormats, Mesh, Geometry, BoundingBox, MaterialInfo,
-RenderTools\VertexFormats			28					Not Started		n/a							n/a			NONE!!!
+RenderTools\VertexFormats			28					Not Started		n/a							n/a			None
 RenderTools\Texture					314					Not Started		n/a							n/a			Mesh.h, Material.h (both external?)
 RenderTools\SelectionContainer		91					Not Started		n/a							n/a			SceneObject, MeshRenderableShape, SliceRenderableShape, SliceGeometry, BoundingBox 
-RendereTools\Camera					106					Not Started		n/a							n/a			BoundingBox
+RenderTools\Camera					106					Not Started		n/a							n/a			BoundingBox
+RenderTools\TextureManager			294					Not Started		n/a							n/a			Texture, CriticalSelection, ImageFormat, LoadImage
+
+FileFormats\ObjParser				663					Not Started		n/a							n/a			None
+
+GeometryVerifier\GeometeryVerifier	280					Not Started		n/a							n/a			VerifierLib
+GeometryVerifier\Verifier			177					Not Started		n/a							n/a			VerifyerLib, GeometryVerifier
+
+ImageTools\LoadImage				134					Not Started		n/a							n/a			ImportExport
+
+MeshTools\BoundingBox				60					Not Started		n/a							n/a			None	
+MeshTools\Geometry					46					Not Started		n/a							n/a			BoundingBox, Lib3mf
+MeshTools\SliceConverter			598					Not Started		n/a							n/a			Lib3mf, MathUtils, CurveUtils	
+MeshTools\SliceGeometry				70					Not Started		n/a							n/a			Geometry, Lib3mf, SliceConverter
+MeshTools\Mesh						134					Not Started		n/a							n/a			MaterialInfo, BoundingBox, Geometry
+MeshTools\Material					11					Not Started		n/a							n/a			None
+MeshTools\MaterialInfo				25					Not Started		n/a							n/a			None
+MeshTools\MathUtils					160					Not Started		n/a							n/a			None
+MeshTools\CurveUtils				118					Not Started		n/a							n/a			None
+MeshTools\MaterialUtils				64					Not Started		n/a							n/a			Lib3mf, ObjParser, MaterialInfo
+MeshTools\GeometryBuilder			331					Not Started		n/a							n/a			Lib3mf, MaterialInfo, SliceGeometry, Mesh, MaterialUtils

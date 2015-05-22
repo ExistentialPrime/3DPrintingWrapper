@@ -58,6 +58,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <AdditionalIncludeDirectories>..\..\Libraries\GeometryVerifier;..\..\Libraries\Platform;..\..\Libraries\FileFormats;..\..\Libraries\MeshTools;..\..\Libraries\RenderTools;..\..\LIbraries\RenderTools\ShaderBinaries;..\..\Libraries\PrintingLib;..\..\Libraries\ImageTools;..\..\Libraries\CustomUI;..\..\Libraries\Lib3mf</AdditionalIncludeDirectories>
       <MinimalRebuild>false</MinimalRebuild>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -127,6 +128,9 @@
     <ProjectReference Include="..\RenderTools\RenderTools.vcxproj">
       <Project>{46b06c07-ef94-4541-a75c-738d2fec4301}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TaskList.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

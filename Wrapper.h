@@ -39,7 +39,7 @@ namespace Wrapper {
 	private:
 		bool m_geometryValid;
 
-		WrappedSceneContainer m_sceneContainer;
+		//WrappedSceneContainer m_sceneContainer;
 		//Camera m_camera;
 		//Renderer m_renderer;
 		//CCameraTool m_cameraTool;
